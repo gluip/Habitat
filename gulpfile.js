@@ -468,3 +468,12 @@ gulp.task("Package-Generate", function (callback) {
         "Package-Clean",
         callback);
 });
+
+/* Main task, generate package.xml */
+gulp.task("Generate-Zip", function (callback) {
+    runSequence(
+        "Package-Clean",
+        "Package-Publish",
+        "Package-Prepare-Package-Files",
+        callback);
+});
